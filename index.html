@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="top-bar">
+   
+    <header>
+        <div class="top-bar">
       <div class="logo">BAFY<span>.</span></div>
       <div class="social-links">
         <a href="https://instagram.com/joyeria_bafy" target="_blank">Instagram</a>
@@ -99,8 +101,35 @@
           <button class="add-to-cart" onclick="agregarAlCarrito('Tobillera Dije Mariposa', 6800)">Agregar al Carrito</button>
         </div>
       </div>
-
     </div>
   </main>
+    <footer>
+    <p>&copy; 2026 BAFY - Joyería en Acero Quirúrgico. Todos los derechos reservados.</p>
+    <p class="social-handles">Seguinos en Instagram y TikTok: @joyeria_bafy</p>
+  </footer>
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      total += precio;
+      document.getElementById('cart-count').innerText = carrito.length;
+      alert(`¡${nombre} se agregó al carrito!`);
+    }
+
+    function mostrarCarrito() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+      } else {
+        let resumen = 'Productos en tu carrito:\n\n';
+        carrito.forEach((prod, index) => {
+          resumen += `${index + 1}. ${prod.nombre} - $${prod.precio}\n`;
+        });
+        resumen += `\nTotal: $${total}`;
+        alert(resumen);
+      }
+    }
+  </script>
 </body>
 </html>
