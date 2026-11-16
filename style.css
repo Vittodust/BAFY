@@ -23,6 +23,7 @@
     /* HEADER Y NAVEGACIÓN */
     header {
       background-color: var(--azul-marino);
+      background-image: url('imagenes/Fondo\ historia.jpeg');
       color: var(--blanco);
       padding: 15px 5%;
       position: sticky;
