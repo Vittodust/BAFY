@@ -22,8 +22,10 @@
 
     /* HEADER Y NAVEGACIÓN */
     header {
-      background-color: var(--azul-marino);
+      /*background-color: var(--azul-marino);*/
       background-image: url('imagenes/Fondo_historia.jpeg');
+      background-repeat: no-repeat;
+      background-size: auto;
       color: var(--blanco);
       padding: 15px 5%;
       position: sticky;
