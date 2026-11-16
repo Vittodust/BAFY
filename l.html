@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="top-bar">
+          <img src="1000125299.png" alt="logo" class="logo" id="img1">
+      <div class="social-links">
+        <a href="historia.html">Historia</a>
+        <a href="https://instagram.com/joyeria_bafy" target="_blank">Instagram</a>
+        <a href="https://tiktok.com/@joyeria_bafy" target="_blank">TikTok</a>
+      </div>
+      <button class="cart-btn" onclick="mostrarCarrito()">🛒 Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <!-- BANNER DE OFERTAS -->
+  <section class="hero-banner">
+    <h1>Joyería en Acero Quirúrgico</h1>
+    <p>✨ Los mejores accesorios, solo para vos ✨</p>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <main class="container">
+    <h2 class="section-title">Colección Destacada</h2>
+    
+   
+    </div>
+  </main>
+    <footer>
+    <p>&copy; 2026 BAFY - Joyería en Acero Quirúrgico. Todos los derechos reservados.</p>
+    <p class="social-handles">Seguinos en Instagram y TikTok: @joyeria_bafy</p>
+  </footer>
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      total += precio;
+      document.getElementById('cart-count').innerText = carrito.length;
+      alert(`¡${nombre} se agregó al carrito!`);
+    }
+
+    function mostrarCarrito() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+      } else {
+        let resumen = 'Productos en tu carrito:\n\n';
+        carrito.forEach((prod, index) => {
+          resumen += `${index + 1}. ${prod.nombre} - $${prod.precio}\n`;
+        });
+        resumen += `\nTotal: $${total}`;
+        alert(resumen);
+      }
+    }
+  </script>
+</body>
+</html>
